@@ -1,0 +1,38 @@
+.todos
+  &__wrapper
+    position absolute
+    top NAVBAR_HEIGHT
+    left 0
+    width 100%
+    height 100vh - (NAVBAR_HEIGHT + 0.1rem)
+    display flex
+    align-items center
+    justify-content center
+  &__container
+    background #fff
+    width 50%
+    height 90%
+  &__header
+    font-size 4rem
+    font-weight bold
+    color PRIMARY_COLOR
+    display flex
+    align-items center
+    justify-content space-between
+
+.todo
+  display flex
+  padding 1rem
+  margin 2rem 0
+  font-size 2rem
+  border #ccc solid 1px
+  border-radius .5rem
+  input
+    width 100%
+    font-size 2rem
+  &:hover, &:active
+    border PRIMARY_COLOR solid 1px
+    cursor pointer
+
+  &__index
+    margin-right 1rem

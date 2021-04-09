@@ -1,0 +1,38 @@
+{
+  "name": "twodo",
+  "version": "1.0.0",
+  "description": "A Todo App made using React and Firebase",
+  "main": "index.js",
+  "repository": "https://github.com/skadewdl3/twodo",
+  "author": "Soham K <sohamk10@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "firebase": "^8.3.3",
+    "lodash": "^4.17.21",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-firebase-hooks": "^3.0.3",
+    "react-hot-loader": "^4.12.21",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "^1.2.1",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.11.0",
+    "webpack-cli": "3",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production"
+  }
+}
