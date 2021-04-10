@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { CloseCircleOutlined } from '@ant-design/icons';
+import {
+  DeleteOutlined,
+  CloseCircleOutlined,
+  CheckCircleOutlined,
+  SaveOutlined,
+} from '@ant-design/icons';
 
-const Todo = ({ content, index, updateTodo, removeTodo }) => {
+const Todo = ({ content, index, updateTodo, removeTodo, moves, moveTo }) => {
   return (
     <div className="todo">
       <div className="todo__index">{index + 1}.</div>
@@ -13,7 +18,25 @@ const Todo = ({ content, index, updateTodo, removeTodo }) => {
         defaultValue={content}
       ></input>
       <div className="todo__controls">
-        <CloseCircleOutlined onClick={() => removeTodo(index)} />
+        {moves.map(move =>
+          move == 'Todos' ? (
+            <CloseCircleOutlined
+              key={Math.random()}
+              onClick={() => moveTo(index, 'Todos')}
+            />
+          ) : move == 'Done' ? (
+            <CheckCircleOutlined
+              key={Math.random()}
+              onClick={() => moveTo(index, 'Done')}
+            />
+          ) : (
+            <SaveOutlined
+              key={Math.random()}
+              onClick={() => moveTo(index, 'Archived')}
+            />
+          )
+        )}
+        <DeleteOutlined key={Math.random()} onClick={() => removeTodo(index)} />
       </div>
     </div>
   );

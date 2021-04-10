@@ -29,7 +29,11 @@ const SignUp = () => {
           .set({
             name,
             email,
-            data: [],
+            data: {
+              Todos: [],
+              Done: [],
+              Archived: [],
+            },
           })
           .then(() => setRedirect(true))
           .catch(err => setError(err.message));
@@ -41,7 +45,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signin">
+    <div className="signup">
       {redirect && <Redirect to="/" />}
       <form
         className="signup__form"

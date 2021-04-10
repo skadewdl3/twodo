@@ -8,6 +8,20 @@
     display flex
     align-items center
     justify-content center
+
+  &__categories
+    display flex
+    margin-bottom 1rem
+  
+  &__category
+    font-size 1.6rem
+    margin 0 1rem
+    cursor pointer
+    &:first-child
+      margin-left 0
+
+    &--active
+      border-bottom 2px solid PRIMARY_COLOR
   &__container
     background #fff
     width 50%
@@ -37,6 +51,14 @@
   &:hover, &:active
     border PRIMARY_COLOR solid 1px
     cursor pointer
+  
+  &__controls
+    display flex
+    align-items center
+    span
+      margin auto 1rem
+      &:last-child
+        margin-right 0
 
   &__index
     margin-right 1rem
