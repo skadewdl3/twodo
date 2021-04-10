@@ -38,7 +38,13 @@ const SignUp = () => {
   return (
     <div className="signin">
       {redirect && <Redirect to="/" />}
-      <form className="signup__form">
+      <form
+        className="signup__form"
+        onSubmit={e => {
+          e.preventDefault();
+          signUp();
+        }}
+      >
         <div className="signup__header">Sign Up</div>
         <div className="signup__input__wrapper" onFocus={() => setError(null)}>
           <input
@@ -61,9 +67,7 @@ const SignUp = () => {
             className="signup__input signup__password"
           />
         </div>
-        <button className="signup__cta" onClick={signUp}>
-          Sign Up
-        </button>
+        <button className="signup__cta">Sign Up</button>
         {error && <div className="signup__error">{error}</div>}
         <div className="signup__option">
           Already have an account ? <Link to="/signin">Sign In</Link>.

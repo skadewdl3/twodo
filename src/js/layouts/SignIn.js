@@ -18,7 +18,13 @@ const SignIn = () => {
 
   return (
     <div className="signin">
-      <form className="signin__form">
+      <form
+        className="signin__form"
+        onSubmit={e => {
+          e.preventDefault();
+          signIn();
+        }}
+      >
         <div className="signin__header">Sign In</div>
         <div className="signin__input__wrapper" onFocus={() => setError(null)}>
           <input
@@ -34,9 +40,7 @@ const SignIn = () => {
             className="signin__input signin__password"
           />
         </div>
-        <button className="signin__cta" onClick={signIn}>
-          Sign In
-        </button>
+        <button className="signin__cta">Sign In</button>
         {error && <div className="signin__error">{error}</div>}
         <div className="signin__option">
           Don't have an account yet ? <Link to="/signup">Sign Up</Link>.

@@ -15,9 +15,7 @@ const Todos = ({ userData }) => {
 
   useEffect(() => {
     if (!shouldUpdate) return;
-    if (todos[0]) {
-      ref.update({ data: todos });
-    }
+    ref.update({ data: todos });
   });
 
   useEffect(() => {
