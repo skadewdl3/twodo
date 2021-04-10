@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -7,6 +7,11 @@ const SignUp = () => {
   const [error, setError] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    let el = document.querySelector('.signup');
+    el.style.height = getComputedStyle(el).getPropertyValue('height');
+  }, []);
 
   const signUp = () => {
     const name = document.querySelector('.signup__name').value;

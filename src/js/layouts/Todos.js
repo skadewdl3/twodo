@@ -19,6 +19,11 @@ const Todos = ({ userData }) => {
   });
 
   useEffect(() => {
+    let el = document.querySelector('.todos__wrapper');
+    el.style.height = getComputedStyle(el).getPropertyValue('height');
+  }, []);
+
+  useEffect(() => {
     if (!value) return;
     setShouldUpdate(false);
     setTodos(value.data);

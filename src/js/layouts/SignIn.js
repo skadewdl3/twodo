@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 
@@ -15,6 +15,11 @@ const SignIn = () => {
         setError(err.message);
       });
   };
+
+  useEffect(() => {
+    let el = document.querySelector('.signin');
+    el.style.height = getComputedStyle(el).getPropertyValue('height');
+  }, []);
 
   return (
     <div className="signin">
